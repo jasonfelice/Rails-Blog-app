@@ -1,0 +1,12 @@
+<div class="user_wrapper">
+  <span><%= link_to "Picture", user %></span>
+  <div class="user_info">
+    <h2><%= user.name %></h2>
+    <span>
+    <%= user.posts_counter%>
+    <% if user.posts_counter.nil?%>
+    <%= "No Posts" %>
+    <%end%>
+    </span>
+  </div>
+</div>

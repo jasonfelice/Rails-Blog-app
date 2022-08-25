@@ -1,1 +1,5 @@
-<h1>Here is a list of users</h1>
+<section class="users">
+  <% @users.each do |user| %>
+  <%= render user%>
+  <%end%>
+<section>
