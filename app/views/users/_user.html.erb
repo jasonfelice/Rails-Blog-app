@@ -3,9 +3,10 @@
   <div class="user_info">
     <h2><%= user.name %></h2>
     <span>
+    Number of posts:
     <%= user.posts_counter%>
     <% if user.posts_counter.nil?%>
-    <%= "No Posts" %>
+    <%= "0" %>
     <%end%>
     </span>
   </div>
