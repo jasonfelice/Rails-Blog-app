@@ -1,5 +1,5 @@
 <div class="user_post">
-  <% link_to "#{post.title}", user_posts_path(@user.id, post.id), class:"post_title" %>
+  <%= link_to "#{post.title}", user_post_path(@user.id, post.id), class:"post_title" %>
   <p> <%= post.text %> </p>
   <div class="post_info">
     <span>Comments: <%= post.comments_counter %></span>
