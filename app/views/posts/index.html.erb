@@ -1,1 +1,20 @@
-<h1>Here is a list of posts for a given user</h1>
+<section class="user_posts">
+  <div class="user_wrapper">
+  <a href="<%= @user.photo %>">Photo</a>
+  <div class="user_info">
+    <h2><%= @user.name %></h2>
+    <span>
+    Number of posts:
+    <%= @user.posts_counter%>
+    <% if @user.posts_counter.nil?%>
+    <%= "0" %>
+    <%end%>
+    </span>
+  </div>
+
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <%end%>
+
+  <button type="button">Pagination</button>
+</section>
