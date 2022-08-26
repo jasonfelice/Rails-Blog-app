@@ -17,6 +17,6 @@
   <% @posts.each do |post| %>
     <%= render post %>
   <%end%>
-
+  <%= link_to "New Post", new_user_post_path %>
   <button type="button">Pagination</button>
 </section>

@@ -2,6 +2,7 @@
   <div class="post">
     <div class="post_heading">
       <span><%= @post.title %> by <%= @post.author.name %></span>
+      <%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post %>
        <div class="post_info">
         <span>Comments: <%= @post.comments_counter %></span>
         <span>Likes: <%= @post.likes_counter %></span>
@@ -14,6 +15,14 @@
   <div class="post_comments">
     <% @post.comments.each do |comment| %>
       <span><%= comment.author.name %>: <%= comment.text %></span>
+    <%end%>
+  </div>
+  <div class="add_comment">
+    <%= form_with model: @comment, url: "/create/#{@post.id}", method: :post, local: true, data: {turbo: false} do |f| %>
+      <div class="comment_field">
+        <%= f.text_area :comment, placeholder: "Type your comment", required: true %>
+      </div>
+      <%= f.submit "Post" %>
     <%end%>
   </div>
 </section>
