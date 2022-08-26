@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'comment/create'
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create] do
-      resources :comments, only: [:index, :create]
+      resources :comments, only: [:create]
       resources :likes, only: [:create]
     end
   end

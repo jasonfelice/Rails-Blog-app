@@ -18,7 +18,7 @@
     <%end%>
   </div>
   <div class="add_comment">
-    <%= form_with model: @comment, url: user_post_comments_path(@post.author, @post.id), method: :post do |f| %>
+    <%= form_with url: user_post_comments_path(@post.author, @post), scope: :comment do |f| %>
       <div class="comment_field">
         <%= f.text_area :text, placeholder: "Type your comment", required: true %>
       </div>
