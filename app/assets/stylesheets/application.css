@@ -40,3 +40,18 @@ section {
 .user_wrapper .post_number a {
   margin: auto;
 }
+
+.user_bio,
+.post_wrapper {
+  padding: 1rem;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 41%;
+  align-self: center;
+  gap: 2rem;
+}
+
+.see_all {
+  text-align: center;
+}
