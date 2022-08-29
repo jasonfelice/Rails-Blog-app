@@ -56,3 +56,17 @@ section {
 .see_all {
   text-align: center;
 }
+
+.post,
+.post_comments {
+  display: flex;
+  border: 2px solid black;
+  padding: 1rem;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.post_heading {
+  display: flex;
+  justify-content: space-between;
+}
