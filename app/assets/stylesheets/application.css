@@ -42,7 +42,8 @@ section {
 }
 
 .user_bio,
-.post_wrapper {
+.post_wrapper,
+.user_post {
   padding: 1rem;
   border: 2px solid black;
   display: flex;
