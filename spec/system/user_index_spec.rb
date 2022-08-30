@@ -15,10 +15,11 @@ RSpec.describe 'User show', type: :system do
   end
 
   it 'shows number of posts of user' do
-    expect(page).to have_content("Number of posts: 0")
+    expect(page).to have_content('Number of posts: 0')
   end
 
   it 'redirect to user details page' do
-    click_link "Picture"
+    click_link 'Picture'
     expect(page).to have_current_path user_path(@user)
+  end
 end
