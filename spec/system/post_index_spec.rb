@@ -4,7 +4,7 @@ RSpec.describe 'Post index', type: :system do
   before :each do
     @user = User.create(name: 'Tim', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Coach')
     @post = Post.create(author: @user, title: 'Test', text: 'This is a test post')
-    Comment.create(author: @author, post: @post, text: "Test Comment")
+    Comment.create(author: @user, post: @post, text: "Test Comment")
   end
 
   it "shows the username" do
