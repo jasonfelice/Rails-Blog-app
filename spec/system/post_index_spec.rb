@@ -4,19 +4,19 @@ RSpec.describe 'Post index', type: :system do
   before :each do
     @user = User.create(name: 'Tim', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Coach')
     @post = Post.create(author: @user, title: 'Test', text: 'This is a test post')
-    Comment.create(author: @user, post: @post, text: "Test Comment")
+    Comment.create(author: @user, post: @post, text: 'Test Comment')
   end
 
-  it "shows the username" do
+  it 'shows the username' do
     expect(page).to have_content(@user.name)
   end
 
-  it "shows the profile picture" do
+  it 'shows the profile picture' do
     expect(page).to have_content(@user.photo)
   end
 
-  it "shows number of posts" do
-    expect(page).to have_content("Number of posts: 1")
+  it 'shows number of posts' do
+    expect(page).to have_content('Number of posts: 1')
   end
 
   it 'shows post title' do
