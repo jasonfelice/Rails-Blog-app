@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "users#index"
+  devise_for :users
+  devise_scope :user do
+    get 'sign_up', to: 'devise/registrations#new'
+  end
   get 'likes/create'
   get 'comment/new'
   get 'comment/create'
