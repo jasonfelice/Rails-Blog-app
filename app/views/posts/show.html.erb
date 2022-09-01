@@ -25,4 +25,7 @@
       <%= f.submit "Post" %>
     <%end%>
   </div>
+  <% if can? :destroy, @post %>
+    <%= button_to "Delete this post", user_post_path(@post.author, @post), method :delete %>
+  <%end%>
 </section>
