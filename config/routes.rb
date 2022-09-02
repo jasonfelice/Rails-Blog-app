@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get 'comment/create'
   post '/create/:id', to: "comments#create"
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create] do
-      resources :likes, only: [:create]
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
+      resources :likes, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
     end
   end
 end

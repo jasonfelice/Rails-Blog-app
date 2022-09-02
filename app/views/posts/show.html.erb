@@ -15,6 +15,9 @@
   <div class="post_comments">
     <% @post.comments.each do |comment| %>
       <span><%= comment.author.name %>: <%= comment.text %></span>
+      <% if can? :delete, comment %>
+      <%= button_to "Delete this comment", user_post_comment_path(comment.author, comment.post, comment), method: :delete %>
+      <%end%>
     <%end%>
   </div>
   <div class="add_comment">
@@ -25,4 +28,7 @@
       <%= f.submit "Post" %>
     <%end%>
   </div>
+  <% if can? :destroy, @post %>
+    <%= button_to "Delete this post", user_post_path(@post.author, @post), method: :delete %>
+  <%end%>
 </section>
