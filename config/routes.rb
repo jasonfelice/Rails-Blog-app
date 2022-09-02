@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'comment/new'
   get 'comment/create'
   post '/create/:id', to: "comments#create"
-  post '/destroy/:id', to: "comments#destroy"
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :likes, only: [:create, :destroy]
